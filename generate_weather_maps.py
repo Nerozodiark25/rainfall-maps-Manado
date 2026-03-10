@@ -32,7 +32,7 @@ FORECAST_INTERVALS = 8
 TIMEZONE_OFFSET = timedelta(hours=8)
 TIMEZONE_LABEL = "WITA"
 
-BASMAP = "CartoDB positron"
+BASMAP = "OpenStreetMap"
 
 LOCATIONS = [
     (1.540399, 124.900850), (1.527247, 124.893918), (1.504577, 124.901615),
@@ -44,7 +44,7 @@ LOCATIONS = [
 ]
 
 MAP_CENTER = [1.480755, 124.939458]
-ZOOM_START = 13
+ZOOM_START = 12
 # ===========================================
 
 # ────────────────────────────────────────────────
@@ -668,3 +668,4 @@ if __name__ == "__main__":
     print("Done! Files saved (single-file versions):")
     print("  • rainfall_prediction_map.html")
     print("  • rainfall_realtime_map.html")
+
