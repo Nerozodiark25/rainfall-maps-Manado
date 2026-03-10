@@ -2,8 +2,8 @@ name: Update Rainfall Maps
 
 on:
   schedule:
-    - cron: '0 19,7 * * *'            # Every hour (you can change to '*/30 * * * *' for every 30 min)
-  workflow_dispatch:             # Allows manual trigger from GitHub UI
+    - cron: '0 19,7 * * *'
+  workflow_dispatch:
 
 jobs:
   generate-and-commit:
@@ -24,6 +24,8 @@ jobs:
         pip install folium requests tenacity numpy matplotlib
 
     - name: Run map generator script
+      env:
+        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}  
       run: python generate_weather_maps.py
 
     - name: Commit and push updated files
@@ -33,5 +35,3 @@ jobs:
         git add *.html colorbar_*.png || true
         git commit -m "Update rainfall maps - $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
