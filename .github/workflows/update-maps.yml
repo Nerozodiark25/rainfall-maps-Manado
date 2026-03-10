@@ -2,7 +2,7 @@ name: Update Rainfall Maps
 
 on:
   schedule:
-    - cron: '7 19,7 * * *'
+    - cron: '2 20,8 * * *'
   workflow_dispatch:
 
 jobs:
