@@ -24,7 +24,7 @@ jobs:
         pip install folium requests tenacity numpy matplotlib
 
     - name: Run map generator script
-      run: python generate_maps.py
+      run: python generate_weather_maps.py
 
     - name: Commit and push updated files
       run: |
