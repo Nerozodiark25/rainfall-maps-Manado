@@ -517,10 +517,10 @@ def create_realtime_map():
     '''
 
     timestamp_html = f'''
-    <div style="position: absolute; top: 10px; right: 20px; background: rgba(255,255,255,0.92);
+    <div style="position: absolute; top: 10px; right: 60px; background: rgba(255,255,255,0.92);
                 padding: 6px 12px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                 font-size: 13px; z-index: 1000; text-align: right; border: 1px solid #ddd;">
-        Generated: {datetime.now().strftime("%d %B %Y %H:%M")} {TIMEZONE_LABEL}<br>
+        Generated: {(datetime.now(timezone.utc) + TIMEZONE_OFFSET).strftime("%d %B %Y %H:%M")} {TIMEZONE_LABEL}<br>
         <small style="color:#555; font-size:11px;">Data: OpenWeatherMap | Interpolation: IDW</small>
     </div>
     '''
@@ -670,6 +670,7 @@ if __name__ == "__main__":
     print("Done! Files saved (single-file versions):")
     print("  • rainfall_prediction_map.html")
     print("  • rainfall_realtime_map.html")
+
 
 
 
