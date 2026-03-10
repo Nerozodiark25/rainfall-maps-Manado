@@ -26,7 +26,9 @@ from folium.plugins import HeatMap
 logging.basicConfig(filename="rainfall_maps.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # ================== CONFIG ==================
-API_KEY = "2d5e581b68426e7e70bb8799e256f1dc"
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
+if not API_KEY:
+    raise ValueError("OPENWEATHER_API_KEY environment variable is not set")
 CACHE_DURATION = 3600
 FORECAST_INTERVALS = 8
 TIMEZONE_OFFSET = timedelta(hours=8)
@@ -668,4 +670,5 @@ if __name__ == "__main__":
     print("Done! Files saved (single-file versions):")
     print("  • rainfall_prediction_map.html")
     print("  • rainfall_realtime_map.html")
+
 
