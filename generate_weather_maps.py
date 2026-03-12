@@ -118,22 +118,20 @@ def get_current_weather(lat, lon, cache_file="current_cache.json"):
     cache = load_cache(cache_file)
     if key in cache: return cache[key]
 
-    url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=rain,temperature_2m,relative_humidity_2m&timezone=Asia/Makassar"
+    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=metric"
     try:
-        data = requests.get(url, timeout=10).json()
-        current = data.get("current", {})
-        rain = current.get("rain", 0.0)
+        data = fetch_api_data(url)
         result = {
-            "rainfall": rain,
-            "temp": current.get("temperature_2m", 0.0),
-            "humidity": current.get("relative_humidity_2m", 0),
-            "timestamp": current.get("time"),  # ISO string
+            "rainfall": data.get("rain", {}).get("1h", 0),
+            "temp": data.get("main", {}).get("temp", 0),
+            "humidity": data.get("main", {}).get("humidity", 0),
+            "timestamp": data.get("dt"),
         }
         cache[key] = result
         save_cache(cache_file, cache)
         return result
     except Exception as e:
-        print(f"Open-Meteo error: {e}")
+        print(f"Current weather error: {e}")
         return None
 
 # ────────────────────────────────────────────────
@@ -672,6 +670,7 @@ if __name__ == "__main__":
     print("Done! Files saved (single-file versions):")
     print("  • rainfall_prediction_map.html")
     print("  • rainfall_realtime_map.html")
+
 
 
 
