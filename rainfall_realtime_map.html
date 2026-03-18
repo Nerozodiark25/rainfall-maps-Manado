@@ -97,7 +97,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d53179ecb35f08117bcb6e0b55838409 {
+                #map_c52cd611d0b048f0ae6ed55e2c0a0ca1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -160,7 +160,7 @@
     <div style="position: absolute; top: 10px; right: 60px; background: rgba(255,255,255,0.92);
                 padding: 6px 12px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                 font-size: 13px; z-index: 1000; text-align: right; border: 1px solid #ddd;">
-        Generated: 18 March 2026 13:02 WITA<br>
+        Generated: 18 March 2026 18:02 WITA<br>
         <small style="color:#555; font-size:11px;">Data: OpenWeatherMap | Interpolation: IDW</small>
     </div>
     
@@ -241,14 +241,14 @@
     
     
     
-            <div class="folium-map" id="map_d53179ecb35f08117bcb6e0b55838409" ></div>
+            <div class="folium-map" id="map_c52cd611d0b048f0ae6ed55e2c0a0ca1" ></div>
         
 </body>
 <script>
     
     
-            var map_d53179ecb35f08117bcb6e0b55838409 = L.map(
-                "map_d53179ecb35f08117bcb6e0b55838409",
+            var map_c52cd611d0b048f0ae6ed55e2c0a0ca1 = L.map(
+                "map_c52cd611d0b048f0ae6ed55e2c0a0ca1",
                 {
                     center: [1.480755, 124.939458],
                     crs: L.CRS.EPSG3857,
@@ -265,7 +265,7 @@
 
         
     
-            var tile_layer_53feffad26b2e86391a8878d3196faa8 = L.tileLayer(
+            var tile_layer_ae999a1847322fe32cface9a48c74944 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -282,23 +282,23 @@
             );
         
     
-            tile_layer_53feffad26b2e86391a8878d3196faa8.addTo(map_d53179ecb35f08117bcb6e0b55838409);
+            tile_layer_ae999a1847322fe32cface9a48c74944.addTo(map_c52cd611d0b048f0ae6ed55e2c0a0ca1);
         
     
-            var feature_group_a92502b187a13d6a5116bf14ba9f1f41 = L.featureGroup(
+            var feature_group_087e2f9947dbe26ac7023b8c46b66276 = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_cd0f25b9a5cbefade48202398c2989ce = L.marker(
+            var marker_9969b37c06d79684b191a0c8e51e49a3 = L.marker(
                 [1.540399, 124.90085],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_91babb0bf844a0c0218650e221c3a1a2 = L.AwesomeMarkers.icon(
+            var icon_2478329968ba28b45cc5d939c87b3591 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -309,26 +309,26 @@
             );
         
     
-        var popup_2ee5997caac5364f6cd9313440e38859 = L.popup({
+        var popup_008a34401b910fedf510851b05589dad = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_7fd2472d277253ac65ef57a1b724564a = $(`<div id="html_7fd2472d277253ac65ef57a1b724564a" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.8 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_2ee5997caac5364f6cd9313440e38859.setContent(html_7fd2472d277253ac65ef57a1b724564a);
+                var html_90d5f06c9aba39ee5bdd63af2f502c9d = $(`<div id="html_90d5f06c9aba39ee5bdd63af2f502c9d" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.1 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_008a34401b910fedf510851b05589dad.setContent(html_90d5f06c9aba39ee5bdd63af2f502c9d);
             
         
 
-        marker_cd0f25b9a5cbefade48202398c2989ce.bindPopup(popup_2ee5997caac5364f6cd9313440e38859)
+        marker_9969b37c06d79684b191a0c8e51e49a3.bindPopup(popup_008a34401b910fedf510851b05589dad)
         ;
 
         
     
     
-            marker_cd0f25b9a5cbefade48202398c2989ce.bindTooltip(
+            marker_9969b37c06d79684b191a0c8e51e49a3.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.8 °C
+                     Rainfall: 0.0 mm | Temperature: 27.1 °C
                  </div>`,
                 {
   "sticky": true,
@@ -336,17 +336,17 @@
             );
         
     
-                marker_cd0f25b9a5cbefade48202398c2989ce.setIcon(icon_91babb0bf844a0c0218650e221c3a1a2);
+                marker_9969b37c06d79684b191a0c8e51e49a3.setIcon(icon_2478329968ba28b45cc5d939c87b3591);
             
     
-            var marker_f86759dcb96175029723291f2d145c6c = L.marker(
+            var marker_6dd2d4b7d676df9b8b782ff22548a169 = L.marker(
                 [1.527247, 124.893918],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_788586a16104ecc33965ca2c323c0b48 = L.AwesomeMarkers.icon(
+            var icon_0bff9bf74bf9ebf7c3ff5047596b9910 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -357,26 +357,26 @@
             );
         
     
-        var popup_76ea419cec0a396908f1e2d494b9ab2e = L.popup({
+        var popup_bedd2d9cbc768679505180e3c08f812a = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_7d233bf6e5c610cfc61aa3f317464543 = $(`<div id="html_7d233bf6e5c610cfc61aa3f317464543" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.8 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_76ea419cec0a396908f1e2d494b9ab2e.setContent(html_7d233bf6e5c610cfc61aa3f317464543);
+                var html_8b132c3453fd58eb1b8171a16e45005a = $(`<div id="html_8b132c3453fd58eb1b8171a16e45005a" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.1 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_bedd2d9cbc768679505180e3c08f812a.setContent(html_8b132c3453fd58eb1b8171a16e45005a);
             
         
 
-        marker_f86759dcb96175029723291f2d145c6c.bindPopup(popup_76ea419cec0a396908f1e2d494b9ab2e)
+        marker_6dd2d4b7d676df9b8b782ff22548a169.bindPopup(popup_bedd2d9cbc768679505180e3c08f812a)
         ;
 
         
     
     
-            marker_f86759dcb96175029723291f2d145c6c.bindTooltip(
+            marker_6dd2d4b7d676df9b8b782ff22548a169.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.8 °C
+                     Rainfall: 0.0 mm | Temperature: 27.1 °C
                  </div>`,
                 {
   "sticky": true,
@@ -384,17 +384,17 @@
             );
         
     
-                marker_f86759dcb96175029723291f2d145c6c.setIcon(icon_788586a16104ecc33965ca2c323c0b48);
+                marker_6dd2d4b7d676df9b8b782ff22548a169.setIcon(icon_0bff9bf74bf9ebf7c3ff5047596b9910);
             
     
-            var marker_77c16f45241411a1eca5f0817758467f = L.marker(
+            var marker_541bc2590c2678577ac1cd927fcfc865 = L.marker(
                 [1.504577, 124.901615],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_3a850ef140d23b5f7530833070c62ab4 = L.AwesomeMarkers.icon(
+            var icon_9e97dec2bbccdc231666a1cd37f2fab0 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -405,26 +405,26 @@
             );
         
     
-        var popup_419829e9bae7ad349429f983f283133b = L.popup({
+        var popup_ff0b59a14c693ac311448adc09f630b9 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_cf29fc8e4d5294ef0c8fb7ec563df042 = $(`<div id="html_cf29fc8e4d5294ef0c8fb7ec563df042" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.9 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_419829e9bae7ad349429f983f283133b.setContent(html_cf29fc8e4d5294ef0c8fb7ec563df042);
+                var html_f7ef190c44ffd54c83d985e2d0905e9a = $(`<div id="html_f7ef190c44ffd54c83d985e2d0905e9a" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.1 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_ff0b59a14c693ac311448adc09f630b9.setContent(html_f7ef190c44ffd54c83d985e2d0905e9a);
             
         
 
-        marker_77c16f45241411a1eca5f0817758467f.bindPopup(popup_419829e9bae7ad349429f983f283133b)
+        marker_541bc2590c2678577ac1cd927fcfc865.bindPopup(popup_ff0b59a14c693ac311448adc09f630b9)
         ;
 
         
     
     
-            marker_77c16f45241411a1eca5f0817758467f.bindTooltip(
+            marker_541bc2590c2678577ac1cd927fcfc865.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.9 °C
+                     Rainfall: 0.0 mm | Temperature: 27.1 °C
                  </div>`,
                 {
   "sticky": true,
@@ -432,17 +432,17 @@
             );
         
     
-                marker_77c16f45241411a1eca5f0817758467f.setIcon(icon_3a850ef140d23b5f7530833070c62ab4);
+                marker_541bc2590c2678577ac1cd927fcfc865.setIcon(icon_9e97dec2bbccdc231666a1cd37f2fab0);
             
     
-            var marker_039efdc8bdb2516a4f93d2be3dba33b6 = L.marker(
+            var marker_30b5f01cc6bf6485ad7d631dde8ea254 = L.marker(
                 [1.48521, 124.897125],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_b77468d85ea0028bab660042b5b23dba = L.AwesomeMarkers.icon(
+            var icon_9ea9ad585ffd20e2c8566cbef6448e29 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -453,26 +453,26 @@
             );
         
     
-        var popup_70d4bb38d2959f59c428aee3b12b378c = L.popup({
+        var popup_8ced1959e3ed5c7bc53219b6d90b6de8 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_e968df0b5fdab1f04596633030bcc278 = $(`<div id="html_e968df0b5fdab1f04596633030bcc278" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.2 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_70d4bb38d2959f59c428aee3b12b378c.setContent(html_e968df0b5fdab1f04596633030bcc278);
+                var html_3eabfc34c04673d19a89dc2865a71883 = $(`<div id="html_3eabfc34c04673d19a89dc2865a71883" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.3 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_8ced1959e3ed5c7bc53219b6d90b6de8.setContent(html_3eabfc34c04673d19a89dc2865a71883);
             
         
 
-        marker_039efdc8bdb2516a4f93d2be3dba33b6.bindPopup(popup_70d4bb38d2959f59c428aee3b12b378c)
+        marker_30b5f01cc6bf6485ad7d631dde8ea254.bindPopup(popup_8ced1959e3ed5c7bc53219b6d90b6de8)
         ;
 
         
     
     
-            marker_039efdc8bdb2516a4f93d2be3dba33b6.bindTooltip(
+            marker_30b5f01cc6bf6485ad7d631dde8ea254.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.2 °C
+                     Rainfall: 0.0 mm | Temperature: 27.3 °C
                  </div>`,
                 {
   "sticky": true,
@@ -480,17 +480,17 @@
             );
         
     
-                marker_039efdc8bdb2516a4f93d2be3dba33b6.setIcon(icon_b77468d85ea0028bab660042b5b23dba);
+                marker_30b5f01cc6bf6485ad7d631dde8ea254.setIcon(icon_9ea9ad585ffd20e2c8566cbef6448e29);
             
     
-            var marker_899ec7553819f4125d0e8558f99a8592 = L.marker(
+            var marker_e6bd788aafedbef11285c2366d41e3f9 = L.marker(
                 [1.470711, 124.919127],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_38faf0474192fc2931a11c8125418711 = L.AwesomeMarkers.icon(
+            var icon_d87fbb0df4b7d7a18605279343eddbdc = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -501,26 +501,26 @@
             );
         
     
-        var popup_4a5fb501efb631c09116e2bb2fd050d4 = L.popup({
+        var popup_f41f6d449988383ea7c4887819e45838 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_b45569ea989cf5c1596ec6b792745d7a = $(`<div id="html_b45569ea989cf5c1596ec6b792745d7a" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.2 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_4a5fb501efb631c09116e2bb2fd050d4.setContent(html_b45569ea989cf5c1596ec6b792745d7a);
+                var html_f306083254677d564635fc91897ebc3e = $(`<div id="html_f306083254677d564635fc91897ebc3e" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.7 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_f41f6d449988383ea7c4887819e45838.setContent(html_f306083254677d564635fc91897ebc3e);
             
         
 
-        marker_899ec7553819f4125d0e8558f99a8592.bindPopup(popup_4a5fb501efb631c09116e2bb2fd050d4)
+        marker_e6bd788aafedbef11285c2366d41e3f9.bindPopup(popup_f41f6d449988383ea7c4887819e45838)
         ;
 
         
     
     
-            marker_899ec7553819f4125d0e8558f99a8592.bindTooltip(
+            marker_e6bd788aafedbef11285c2366d41e3f9.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.2 °C
+                     Rainfall: 0.0 mm | Temperature: 26.7 °C
                  </div>`,
                 {
   "sticky": true,
@@ -528,17 +528,17 @@
             );
         
     
-                marker_899ec7553819f4125d0e8558f99a8592.setIcon(icon_38faf0474192fc2931a11c8125418711);
+                marker_e6bd788aafedbef11285c2366d41e3f9.setIcon(icon_d87fbb0df4b7d7a18605279343eddbdc);
             
     
-            var marker_1b5c9949b4f2202e8a991a03c6bf6740 = L.marker(
+            var marker_2c4b06ec09c114f010fc3c0771e2a1aa = L.marker(
                 [1.458225, 124.934398],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_1492c1ce88a6a957e10a9ceeadad17aa = L.AwesomeMarkers.icon(
+            var icon_4c60384136d0e369b0fa49d4eceed157 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -549,26 +549,26 @@
             );
         
     
-        var popup_3189286a0e1c04d7a09a32b67dc61c61 = L.popup({
+        var popup_1706a681ed982a700b7f57c960cce18c = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_43cb9e3541e0dd3b8bd3b510c523fcda = $(`<div id="html_43cb9e3541e0dd3b8bd3b510c523fcda" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.2 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_3189286a0e1c04d7a09a32b67dc61c61.setContent(html_43cb9e3541e0dd3b8bd3b510c523fcda);
+                var html_94ecd195aaaff7ddfb1412d345636c16 = $(`<div id="html_94ecd195aaaff7ddfb1412d345636c16" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.6 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_1706a681ed982a700b7f57c960cce18c.setContent(html_94ecd195aaaff7ddfb1412d345636c16);
             
         
 
-        marker_1b5c9949b4f2202e8a991a03c6bf6740.bindPopup(popup_3189286a0e1c04d7a09a32b67dc61c61)
+        marker_2c4b06ec09c114f010fc3c0771e2a1aa.bindPopup(popup_1706a681ed982a700b7f57c960cce18c)
         ;
 
         
     
     
-            marker_1b5c9949b4f2202e8a991a03c6bf6740.bindTooltip(
+            marker_2c4b06ec09c114f010fc3c0771e2a1aa.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.2 °C
+                     Rainfall: 0.0 mm | Temperature: 26.6 °C
                  </div>`,
                 {
   "sticky": true,
@@ -576,17 +576,17 @@
             );
         
     
-                marker_1b5c9949b4f2202e8a991a03c6bf6740.setIcon(icon_1492c1ce88a6a957e10a9ceeadad17aa);
+                marker_2c4b06ec09c114f010fc3c0771e2a1aa.setIcon(icon_4c60384136d0e369b0fa49d4eceed157);
             
     
-            var marker_8405ed9c202372f3ce1a7ca795a0dc58 = L.marker(
+            var marker_8f572a25d5c0263eb89dbe0f07ef6465 = L.marker(
                 [1.444221, 124.963029],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_0110aec9aa16f40c9d451978a6b20555 = L.AwesomeMarkers.icon(
+            var icon_afaf5deff789666713d3fe52f19d2c4f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -597,26 +597,26 @@
             );
         
     
-        var popup_a1b845ec38340e4cf7a642047e0773b7 = L.popup({
+        var popup_83b16abb1dbed3b74f43747be7ebfd80 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_8aec443df35f8cf478f0f9971400bbc6 = $(`<div id="html_8aec443df35f8cf478f0f9971400bbc6" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.1 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_a1b845ec38340e4cf7a642047e0773b7.setContent(html_8aec443df35f8cf478f0f9971400bbc6);
+                var html_d32bc951f06f5e210e14107b1942dea9 = $(`<div id="html_d32bc951f06f5e210e14107b1942dea9" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.2 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_83b16abb1dbed3b74f43747be7ebfd80.setContent(html_d32bc951f06f5e210e14107b1942dea9);
             
         
 
-        marker_8405ed9c202372f3ce1a7ca795a0dc58.bindPopup(popup_a1b845ec38340e4cf7a642047e0773b7)
+        marker_8f572a25d5c0263eb89dbe0f07ef6465.bindPopup(popup_83b16abb1dbed3b74f43747be7ebfd80)
         ;
 
         
     
     
-            marker_8405ed9c202372f3ce1a7ca795a0dc58.bindTooltip(
+            marker_8f572a25d5c0263eb89dbe0f07ef6465.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.1 °C
+                     Rainfall: 0.0 mm | Temperature: 26.2 °C
                  </div>`,
                 {
   "sticky": true,
@@ -624,17 +624,17 @@
             );
         
     
-                marker_8405ed9c202372f3ce1a7ca795a0dc58.setIcon(icon_0110aec9aa16f40c9d451978a6b20555);
+                marker_8f572a25d5c0263eb89dbe0f07ef6465.setIcon(icon_afaf5deff789666713d3fe52f19d2c4f);
             
     
-            var marker_630c344764db1947547f2d6d0cdf250b = L.marker(
+            var marker_38559ca793ffe0b3df4ce98819ecdaaa = L.marker(
                 [1.428106, 124.978937],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_b856ec2cd206680df7de7ec0ff50c6d5 = L.AwesomeMarkers.icon(
+            var icon_ef2d29f3bcae3a2016bb3c08c4168a2d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -645,26 +645,26 @@
             );
         
     
-        var popup_e737e0dd46ee7783dc987cab03b3a4db = L.popup({
+        var popup_3576ab9408ed7ac9845acbdb3191a6bc = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_90546637353dc801f30346cfbcd4dff3 = $(`<div id="html_90546637353dc801f30346cfbcd4dff3" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.7 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_e737e0dd46ee7783dc987cab03b3a4db.setContent(html_90546637353dc801f30346cfbcd4dff3);
+                var html_faec094197ee01c58c4c241fb05947a0 = $(`<div id="html_faec094197ee01c58c4c241fb05947a0" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 25.9 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_3576ab9408ed7ac9845acbdb3191a6bc.setContent(html_faec094197ee01c58c4c241fb05947a0);
             
         
 
-        marker_630c344764db1947547f2d6d0cdf250b.bindPopup(popup_e737e0dd46ee7783dc987cab03b3a4db)
+        marker_38559ca793ffe0b3df4ce98819ecdaaa.bindPopup(popup_3576ab9408ed7ac9845acbdb3191a6bc)
         ;
 
         
     
     
-            marker_630c344764db1947547f2d6d0cdf250b.bindTooltip(
+            marker_38559ca793ffe0b3df4ce98819ecdaaa.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 27.7 °C
+                     Rainfall: 0.0 mm | Temperature: 25.9 °C
                  </div>`,
                 {
   "sticky": true,
@@ -672,17 +672,17 @@
             );
         
     
-                marker_630c344764db1947547f2d6d0cdf250b.setIcon(icon_b856ec2cd206680df7de7ec0ff50c6d5);
+                marker_38559ca793ffe0b3df4ce98819ecdaaa.setIcon(icon_ef2d29f3bcae3a2016bb3c08c4168a2d);
             
     
-            var marker_fa64ccde1c364748b916bfefbc1eaefe = L.marker(
+            var marker_9c7a27d60552ac0f2f7a245996c25cd4 = L.marker(
                 [1.419185, 124.988509],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_337be59d0517b6b460b56a9ccdf38ee2 = L.AwesomeMarkers.icon(
+            var icon_31ed1327dcae9b334b0bfcb89da1ee09 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -693,26 +693,26 @@
             );
         
     
-        var popup_60341bbd349ccd80df289271576f378f = L.popup({
+        var popup_10987312b98a432462d82bc26e716ba7 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_04eae12c08bdf536ebb7ba948fa5426e = $(`<div id="html_04eae12c08bdf536ebb7ba948fa5426e" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.9 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_60341bbd349ccd80df289271576f378f.setContent(html_04eae12c08bdf536ebb7ba948fa5426e);
+                var html_43f37e754c1ec0995821707fb49d0584 = $(`<div id="html_43f37e754c1ec0995821707fb49d0584" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 25.8 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_10987312b98a432462d82bc26e716ba7.setContent(html_43f37e754c1ec0995821707fb49d0584);
             
         
 
-        marker_fa64ccde1c364748b916bfefbc1eaefe.bindPopup(popup_60341bbd349ccd80df289271576f378f)
+        marker_9c7a27d60552ac0f2f7a245996c25cd4.bindPopup(popup_10987312b98a432462d82bc26e716ba7)
         ;
 
         
     
     
-            marker_fa64ccde1c364748b916bfefbc1eaefe.bindTooltip(
+            marker_9c7a27d60552ac0f2f7a245996c25cd4.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.9 °C
+                     Rainfall: 0.0 mm | Temperature: 25.8 °C
                  </div>`,
                 {
   "sticky": true,
@@ -720,17 +720,17 @@
             );
         
     
-                marker_fa64ccde1c364748b916bfefbc1eaefe.setIcon(icon_337be59d0517b6b460b56a9ccdf38ee2);
+                marker_9c7a27d60552ac0f2f7a245996c25cd4.setIcon(icon_31ed1327dcae9b334b0bfcb89da1ee09);
             
     
-            var marker_77c1fa3e5563cee9db17263a67b1271d = L.marker(
+            var marker_ed58882484a547382ee5c9bcc6c64f7d = L.marker(
                 [1.462117, 124.963898],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_ab649acc7816347d2a176d71304d742d = L.AwesomeMarkers.icon(
+            var icon_3c9f4435ddb41df5768932ac2d7c7361 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -741,26 +741,26 @@
             );
         
     
-        var popup_aca47acc3e34a2d70174377ba6695cca = L.popup({
+        var popup_06318e4a8c9edf19dc44cfc68c4b5106 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_d6170395cd1d2dba81fef8b63e7db471 = $(`<div id="html_d6170395cd1d2dba81fef8b63e7db471" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.0 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_aca47acc3e34a2d70174377ba6695cca.setContent(html_d6170395cd1d2dba81fef8b63e7db471);
+                var html_b36025f4a7f8a63f90cbd505be7cc28c = $(`<div id="html_b36025f4a7f8a63f90cbd505be7cc28c" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.0 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_06318e4a8c9edf19dc44cfc68c4b5106.setContent(html_b36025f4a7f8a63f90cbd505be7cc28c);
             
         
 
-        marker_77c1fa3e5563cee9db17263a67b1271d.bindPopup(popup_aca47acc3e34a2d70174377ba6695cca)
+        marker_ed58882484a547382ee5c9bcc6c64f7d.bindPopup(popup_06318e4a8c9edf19dc44cfc68c4b5106)
         ;
 
         
     
     
-            marker_77c1fa3e5563cee9db17263a67b1271d.bindTooltip(
+            marker_ed58882484a547382ee5c9bcc6c64f7d.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.0 °C
+                     Rainfall: 0.0 mm | Temperature: 26.0 °C
                  </div>`,
                 {
   "sticky": true,
@@ -768,17 +768,17 @@
             );
         
     
-                marker_77c1fa3e5563cee9db17263a67b1271d.setIcon(icon_ab649acc7816347d2a176d71304d742d);
+                marker_ed58882484a547382ee5c9bcc6c64f7d.setIcon(icon_3c9f4435ddb41df5768932ac2d7c7361);
             
     
-            var marker_e045aff673b9f5cb353c68eef71cef19 = L.marker(
+            var marker_0a3ffd49af40fe3d380fc4e8a7c0f0c9 = L.marker(
                 [1.484961, 124.919101],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_285c242046e814d0afb41f97f5f57da2 = L.AwesomeMarkers.icon(
+            var icon_811ba7fd7f2e576b0692376510f76d36 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -789,26 +789,26 @@
             );
         
     
-        var popup_45ee2ace2609284fa088bf7ec2ff1454 = L.popup({
+        var popup_520b5dc597eee0ba12e86b4dd92b2bb2 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_dc15d2bfafef0c8c31ca4db2fb4d7f7f = $(`<div id="html_dc15d2bfafef0c8c31ca4db2fb4d7f7f" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.2 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_45ee2ace2609284fa088bf7ec2ff1454.setContent(html_dc15d2bfafef0c8c31ca4db2fb4d7f7f);
+                var html_554bfcd19b521d33ab289ee13815c103 = $(`<div id="html_554bfcd19b521d33ab289ee13815c103" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.9 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_520b5dc597eee0ba12e86b4dd92b2bb2.setContent(html_554bfcd19b521d33ab289ee13815c103);
             
         
 
-        marker_e045aff673b9f5cb353c68eef71cef19.bindPopup(popup_45ee2ace2609284fa088bf7ec2ff1454)
+        marker_0a3ffd49af40fe3d380fc4e8a7c0f0c9.bindPopup(popup_520b5dc597eee0ba12e86b4dd92b2bb2)
         ;
 
         
     
     
-            marker_e045aff673b9f5cb353c68eef71cef19.bindTooltip(
+            marker_0a3ffd49af40fe3d380fc4e8a7c0f0c9.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.2 °C
+                     Rainfall: 0.0 mm | Temperature: 26.9 °C
                  </div>`,
                 {
   "sticky": true,
@@ -816,17 +816,17 @@
             );
         
     
-                marker_e045aff673b9f5cb353c68eef71cef19.setIcon(icon_285c242046e814d0afb41f97f5f57da2);
+                marker_0a3ffd49af40fe3d380fc4e8a7c0f0c9.setIcon(icon_811ba7fd7f2e576b0692376510f76d36);
             
     
-            var marker_2f5a89e288e47a8d37366fc03aa5f81f = L.marker(
+            var marker_9ed87aff429b0e6c5e97c76ae90c10a3 = L.marker(
                 [1.457115, 124.87093],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_1bd198be2c5d04b71ef054e61927ed9f = L.AwesomeMarkers.icon(
+            var icon_f9b0c255e0e6bf1eaf869b4ef438796c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -837,26 +837,26 @@
             );
         
     
-        var popup_7754efe9dd78d4722cff65257425eb45 = L.popup({
+        var popup_29381737c7610001ce100650dac15acb = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_3f4813cf4e0ee66f9d743a87ad24bc74 = $(`<div id="html_3f4813cf4e0ee66f9d743a87ad24bc74" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.1 °C<br>             <b>Humidity:</b> 71%         </div>         </div>`)[0];
-                popup_7754efe9dd78d4722cff65257425eb45.setContent(html_3f4813cf4e0ee66f9d743a87ad24bc74);
+                var html_bae2d750cb8f281a2c8fd43cff36f82f = $(`<div id="html_bae2d750cb8f281a2c8fd43cff36f82f" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.2 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_29381737c7610001ce100650dac15acb.setContent(html_bae2d750cb8f281a2c8fd43cff36f82f);
             
         
 
-        marker_2f5a89e288e47a8d37366fc03aa5f81f.bindPopup(popup_7754efe9dd78d4722cff65257425eb45)
+        marker_9ed87aff429b0e6c5e97c76ae90c10a3.bindPopup(popup_29381737c7610001ce100650dac15acb)
         ;
 
         
     
     
-            marker_2f5a89e288e47a8d37366fc03aa5f81f.bindTooltip(
+            marker_9ed87aff429b0e6c5e97c76ae90c10a3.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.1 °C
+                     Rainfall: 0.0 mm | Temperature: 27.2 °C
                  </div>`,
                 {
   "sticky": true,
@@ -864,17 +864,17 @@
             );
         
     
-                marker_2f5a89e288e47a8d37366fc03aa5f81f.setIcon(icon_1bd198be2c5d04b71ef054e61927ed9f);
+                marker_9ed87aff429b0e6c5e97c76ae90c10a3.setIcon(icon_f9b0c255e0e6bf1eaf869b4ef438796c);
             
     
-            var marker_695264be0637af734531524a4001b9f8 = L.marker(
+            var marker_f2e18137447bb3f416fc4e66f7aebfcd = L.marker(
                 [1.487556, 124.861307],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_a43fffb84677f1f5a68b7fa83ed0f924 = L.AwesomeMarkers.icon(
+            var icon_9b12fd13bb93403378cf8bf196fb2b39 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -885,26 +885,26 @@
             );
         
     
-        var popup_0997aedf7bc649bfbd45358c7c74c1ea = L.popup({
+        var popup_df7a992493fc6950524a1b60773b4f14 = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_a3fce785775d72affcf82a7e53454ffe = $(`<div id="html_a3fce785775d72affcf82a7e53454ffe" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.1 °C<br>             <b>Humidity:</b> 71%         </div>         </div>`)[0];
-                popup_0997aedf7bc649bfbd45358c7c74c1ea.setContent(html_a3fce785775d72affcf82a7e53454ffe);
+                var html_dbd351d173df56186b18fe26653f4612 = $(`<div id="html_dbd351d173df56186b18fe26653f4612" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.4 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_df7a992493fc6950524a1b60773b4f14.setContent(html_dbd351d173df56186b18fe26653f4612);
             
         
 
-        marker_695264be0637af734531524a4001b9f8.bindPopup(popup_0997aedf7bc649bfbd45358c7c74c1ea)
+        marker_f2e18137447bb3f416fc4e66f7aebfcd.bindPopup(popup_df7a992493fc6950524a1b60773b4f14)
         ;
 
         
     
     
-            marker_695264be0637af734531524a4001b9f8.bindTooltip(
+            marker_f2e18137447bb3f416fc4e66f7aebfcd.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.1 °C
+                     Rainfall: 0.0 mm | Temperature: 27.4 °C
                  </div>`,
                 {
   "sticky": true,
@@ -912,17 +912,17 @@
             );
         
     
-                marker_695264be0637af734531524a4001b9f8.setIcon(icon_a43fffb84677f1f5a68b7fa83ed0f924);
+                marker_f2e18137447bb3f416fc4e66f7aebfcd.setIcon(icon_9b12fd13bb93403378cf8bf196fb2b39);
             
     
-            var marker_39a017beaf8d933f6d32e9041040897c = L.marker(
+            var marker_3c677548368b1b6fbfce6a84d625370e = L.marker(
                 [1.486394, 124.838404],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_5c6dfde2d4b8d29920d01bff2a5d1510 = L.AwesomeMarkers.icon(
+            var icon_2c8cd7e5461e6cd84674cd7eb24de763 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -933,26 +933,26 @@
             );
         
     
-        var popup_5cb6974414e0644cdc246cfd418b291a = L.popup({
+        var popup_277507a6b8b760e0edcbdb7c6f1675bb = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_622059221db8b9019efab68f76f14cb9 = $(`<div id="html_622059221db8b9019efab68f76f14cb9" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.8 °C<br>             <b>Humidity:</b> 74%         </div>         </div>`)[0];
-                popup_5cb6974414e0644cdc246cfd418b291a.setContent(html_622059221db8b9019efab68f76f14cb9);
+                var html_4a2d6806d1a1f79723c60b8f95c049da = $(`<div id="html_4a2d6806d1a1f79723c60b8f95c049da" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.5 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_277507a6b8b760e0edcbdb7c6f1675bb.setContent(html_4a2d6806d1a1f79723c60b8f95c049da);
             
         
 
-        marker_39a017beaf8d933f6d32e9041040897c.bindPopup(popup_5cb6974414e0644cdc246cfd418b291a)
+        marker_3c677548368b1b6fbfce6a84d625370e.bindPopup(popup_277507a6b8b760e0edcbdb7c6f1675bb)
         ;
 
         
     
     
-            marker_39a017beaf8d933f6d32e9041040897c.bindTooltip(
+            marker_3c677548368b1b6fbfce6a84d625370e.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.8 °C
+                     Rainfall: 0.0 mm | Temperature: 27.5 °C
                  </div>`,
                 {
   "sticky": true,
@@ -960,17 +960,17 @@
             );
         
     
-                marker_39a017beaf8d933f6d32e9041040897c.setIcon(icon_5c6dfde2d4b8d29920d01bff2a5d1510);
+                marker_3c677548368b1b6fbfce6a84d625370e.setIcon(icon_2c8cd7e5461e6cd84674cd7eb24de763);
             
     
-            var marker_3f0842d18c9581a86136cef9ed89dd40 = L.marker(
+            var marker_5848b874e461cf3f3c39b2023da11693 = L.marker(
                 [1.514447, 124.849915],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_48fc8c1fd6d84536fed7d07d56e1fc6a = L.AwesomeMarkers.icon(
+            var icon_a0083408751387bdd4c2d510f06a14f5 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -981,26 +981,26 @@
             );
         
     
-        var popup_e1d7d27e76e57580a2663a105d5e898e = L.popup({
+        var popup_35157df5d46ed3330857e120313e0c0c = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_6a8a1887a4218f7dead96fe67aeefdbf = $(`<div id="html_6a8a1887a4218f7dead96fe67aeefdbf" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 29.1 °C<br>             <b>Humidity:</b> 70%         </div>         </div>`)[0];
-                popup_e1d7d27e76e57580a2663a105d5e898e.setContent(html_6a8a1887a4218f7dead96fe67aeefdbf);
+                var html_098a2a3c111afa417013a9595e7833af = $(`<div id="html_098a2a3c111afa417013a9595e7833af" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 27.5 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_35157df5d46ed3330857e120313e0c0c.setContent(html_098a2a3c111afa417013a9595e7833af);
             
         
 
-        marker_3f0842d18c9581a86136cef9ed89dd40.bindPopup(popup_e1d7d27e76e57580a2663a105d5e898e)
+        marker_5848b874e461cf3f3c39b2023da11693.bindPopup(popup_35157df5d46ed3330857e120313e0c0c)
         ;
 
         
     
     
-            marker_3f0842d18c9581a86136cef9ed89dd40.bindTooltip(
+            marker_5848b874e461cf3f3c39b2023da11693.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 29.1 °C
+                     Rainfall: 0.0 mm | Temperature: 27.5 °C
                  </div>`,
                 {
   "sticky": true,
@@ -1008,17 +1008,17 @@
             );
         
     
-                marker_3f0842d18c9581a86136cef9ed89dd40.setIcon(icon_48fc8c1fd6d84536fed7d07d56e1fc6a);
+                marker_5848b874e461cf3f3c39b2023da11693.setIcon(icon_a0083408751387bdd4c2d510f06a14f5);
             
     
-            var marker_ccfa128c36eab5f695c7dcfd7ba681c1 = L.marker(
+            var marker_e19f9686e47baaa13603bad7231d9911 = L.marker(
                 [1.436973, 124.836448],
                 {
 }
-            ).addTo(feature_group_a92502b187a13d6a5116bf14ba9f1f41);
+            ).addTo(feature_group_087e2f9947dbe26ac7023b8c46b66276);
         
     
-            var icon_23672e588d12fb5418b492fbcd2b7d4b = L.AwesomeMarkers.icon(
+            var icon_f54700399f04a7148f0703dbe8a037bd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -1029,26 +1029,26 @@
             );
         
     
-        var popup_18544dce06ede0fd4166b85e73b7f46a = L.popup({
+        var popup_e0b4f63681e4222c3cf9ab13c4d2565b = L.popup({
   "maxWidth": 350,
 });
 
         
             
-                var html_cddf420908507b4816355b74c058b6bb = $(`<div id="html_cddf420908507b4816355b74c058b6bb" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 13:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 28.9 °C<br>             <b>Humidity:</b> 71%         </div>         </div>`)[0];
-                popup_18544dce06ede0fd4166b85e73b7f46a.setContent(html_cddf420908507b4816355b74c058b6bb);
+                var html_28635b1c11a549b6db504f3a70aed60c = $(`<div id="html_28635b1c11a549b6db504f3a70aed60c" style="width: 100.0%; height: 100.0%;">         <div style="font-size:13px; line-height:1.5;">             <b>Current Weather Observation (1-hour)</b><br><br>             <b>Time:</b> 2026-03-18 18:02 WITA<br>             <b>Rainfall:</b> 0.0 mm<br>             <b>Temperature:</b> 26.8 °C<br>             <b>Humidity:</b> 83%         </div>         </div>`)[0];
+                popup_e0b4f63681e4222c3cf9ab13c4d2565b.setContent(html_28635b1c11a549b6db504f3a70aed60c);
             
         
 
-        marker_ccfa128c36eab5f695c7dcfd7ba681c1.bindPopup(popup_18544dce06ede0fd4166b85e73b7f46a)
+        marker_e19f9686e47baaa13603bad7231d9911.bindPopup(popup_e0b4f63681e4222c3cf9ab13c4d2565b)
         ;
 
         
     
     
-            marker_ccfa128c36eab5f695c7dcfd7ba681c1.bindTooltip(
+            marker_e19f9686e47baaa13603bad7231d9911.bindTooltip(
                 `<div>
-                     Rainfall: 0.0 mm | Temperature: 28.9 °C
+                     Rainfall: 0.0 mm | Temperature: 26.8 °C
                  </div>`,
                 {
   "sticky": true,
@@ -1056,19 +1056,19 @@
             );
         
     
-                marker_ccfa128c36eab5f695c7dcfd7ba681c1.setIcon(icon_23672e588d12fb5418b492fbcd2b7d4b);
+                marker_e19f9686e47baaa13603bad7231d9911.setIcon(icon_f54700399f04a7148f0703dbe8a037bd);
             
     
-            feature_group_a92502b187a13d6a5116bf14ba9f1f41.addTo(map_d53179ecb35f08117bcb6e0b55838409);
+            feature_group_087e2f9947dbe26ac7023b8c46b66276.addTo(map_c52cd611d0b048f0ae6ed55e2c0a0ca1);
         
     
-            var feature_group_54f45c330e6c396db41a243b86963c2e = L.featureGroup(
+            var feature_group_856dd11cb751a1da02f2f996a5ee5624 = L.featureGroup(
                 {
 }
             );
         
     
-            var image_overlay_b93a73d50b0785e5e0ff9a84c0a3c9bc = L.imageOverlay(
+            var image_overlay_e254b098771bc5223ded24218b12c652 = L.imageOverlay(
                 "data:image/png;base64,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",
                 [[1.404185, 124.821448], [1.555399, 125.003509]],
                 {
@@ -1078,30 +1078,30 @@
             );
         
     
-            image_overlay_b93a73d50b0785e5e0ff9a84c0a3c9bc.addTo(feature_group_54f45c330e6c396db41a243b86963c2e);
+            image_overlay_e254b098771bc5223ded24218b12c652.addTo(feature_group_856dd11cb751a1da02f2f996a5ee5624);
         
     
-            feature_group_54f45c330e6c396db41a243b86963c2e.addTo(map_d53179ecb35f08117bcb6e0b55838409);
+            feature_group_856dd11cb751a1da02f2f996a5ee5624.addTo(map_c52cd611d0b048f0ae6ed55e2c0a0ca1);
         
     
-            var layer_control_0b5651dcc32cbb25cfed01e77ddd28e7_layers = {
+            var layer_control_e0b018e08a4fddd279d4a82097a74450_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_53feffad26b2e86391a8878d3196faa8,
+                    "openstreetmap" : tile_layer_ae999a1847322fe32cface9a48c74944,
                 },
                 overlays :  {
-                    "Stations" : feature_group_a92502b187a13d6a5116bf14ba9f1f41,
-                    "IDW Current Rainfall (mm)" : feature_group_54f45c330e6c396db41a243b86963c2e,
+                    "Stations" : feature_group_087e2f9947dbe26ac7023b8c46b66276,
+                    "IDW Current Rainfall (mm)" : feature_group_856dd11cb751a1da02f2f996a5ee5624,
                 },
             };
-            let layer_control_0b5651dcc32cbb25cfed01e77ddd28e7 = L.control.layers(
-                layer_control_0b5651dcc32cbb25cfed01e77ddd28e7_layers.base_layers,
-                layer_control_0b5651dcc32cbb25cfed01e77ddd28e7_layers.overlays,
+            let layer_control_e0b018e08a4fddd279d4a82097a74450 = L.control.layers(
+                layer_control_e0b018e08a4fddd279d4a82097a74450_layers.base_layers,
+                layer_control_e0b018e08a4fddd279d4a82097a74450_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_d53179ecb35f08117bcb6e0b55838409);
+            ).addTo(map_c52cd611d0b048f0ae6ed55e2c0a0ca1);
 
         
 </script>
