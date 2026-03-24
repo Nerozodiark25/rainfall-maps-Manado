@@ -313,7 +313,7 @@ def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filenam
                 gradient={"0.4": "blue", "0.65": "lime", "0.9": "yellow", "1.0": "red"}).add_to(fg)
 
 # ────────────────────────────────────────────────
-# Prediction Map
+# Prediction Map (with smarter, more accurate colorbar)
 # ────────────────────────────────────────────────
 def create_prediction_map():
     m = folium.Map(location=MAP_CENTER, zoom_start=ZOOM_START, tiles=BASMAP)
@@ -397,14 +397,25 @@ def create_prediction_map():
     fg_idw_peak.add_to(m)
     fg_idw_24h.add_to(m)
 
+    # ────────────────────────────────────────────────
+    # Improved dynamic colorbar for Expected 24h
+    # ────────────────────────────────────────────────
     if values_peak:
         vmin = max(0.0, round(min(values_peak) - 0.5, 1))
         vmax = round(max(values_peak) + 1.0, 1)
         create_colorbar_png("colorbar_peak.png", "YlOrRd", vmin, vmax, "Peak Rainfall (mm)")
 
     if values_24h:
-        vmin = max(3.0, round(min(values_24h) - 0.5, 1))
-        vmax = round(max(values_24h) + 0.8, 1)
+        max_val = max(values_24h)
+        if max_val < 2.0:
+            vmin = 0.0
+            vmax = 2.0
+        elif max_val < 5.0:
+            vmin = 0.0
+            vmax = round(max_val * 1.4, 1)   # nice readable range for low rain
+        else:
+            vmin = max(0.0, round(min(values_24h) - 0.5, 1))
+            vmax = round(max_val + 0.8, 1)
         create_colorbar_png("colorbar_24h.png", "YlGnBu", vmin, vmax, "Expected 24h Rainfall (mm)")
 
     legend_html_pred = '''
@@ -498,7 +509,7 @@ def create_prediction_map():
 
     folium.LayerControl().add_to(m)
     m.save("rainfall_prediction_map.html")
-    print("✅ Saved: rainfall_prediction_map.html (self-contained)")
+    print("✅ Saved: rainfall_prediction_map.html")
 
 # ────────────────────────────────────────────────
 # Real-Time Map
@@ -657,7 +668,7 @@ def create_realtime_map():
 
     folium.LayerControl().add_to(m)
     m.save("rainfall_realtime_map.html")
-    print("✅ Saved: rainfall_realtime_map.html (self-contained)")
+    print("✅ Saved: rainfall_realtime_map.html")
 
 # ────────────────────────────────────────────────
 # Main
