@@ -2,12 +2,16 @@ name: Update Rainfall Maps
 
 on:
   schedule:
-    - cron: '2 3,9,15,21 * * *'
+    - cron: '2 3,9,15,21 * * *'      # Your current schedule (every 6 hours)
   workflow_dispatch:
 
 jobs:
   generate-and-commit:
     runs-on: ubuntu-latest
+    
+    # This bit silences the Node.js 20 deprecation warning
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Checkout repository
@@ -25,7 +29,7 @@ jobs:
 
     - name: Run map generator script
       env:
-        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}  
+        OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
       run: python generate_weather_maps.py
 
     - name: Commit and push updated files
