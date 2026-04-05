@@ -234,7 +234,8 @@ def create_colorbar_png(filename: str, cmap_name: str, vmin: float, vmax: float,
     plt.savefig(filename, dpi=160, transparent=True, bbox_inches="tight", pad_inches=0.2)
     plt.close(fig)
 
-def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filename_base: str, cmap_name: str, layer_title: str):
+def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filename_base: str, 
+                    cmap_name: str, layer_title: str, vmin=None, vmax=None):
     print(f"🛠️  Creating {layer_title} ...")
     try:
         lats = [p[0] for p in points]
@@ -260,7 +261,8 @@ def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filenam
         ax.axis("off")
         cmap = plt.get_cmap(cmap_name)
         cmap.set_bad(alpha=0)
-        ax.imshow(grid_z, extent=[min_lon, max_lon, min_lat, max_lat], cmap=cmap, alpha=0.75, origin="lower")
+        ax.imshow(grid_z, extent=[min_lon, max_lon, min_lat, max_lat], 
+              cmap=cmap, vmin=vmin, vmax=vmax, alpha=0.75, origin="lower")
         plt.savefig(base_png, dpi=140, transparent=True, bbox_inches="tight", pad_inches=0)
         plt.close(fig)
 
@@ -359,7 +361,7 @@ def create_prediction_map():
             continue
 
         max_pop = max(d["pop"] for d in fc)
-        rain_at_max_pop = max((d for d in fc if d["pop"] == max_pop), key=lambda d: d["rainfall"])["rainfall"]
+        rain_at_max_pop = max(d["rainfall"] for d in fc)
         expected_24h = sum((d["pop"] / 100) * d["rainfall"] for d in fc)
 
         popup_content = f"""
@@ -391,32 +393,31 @@ def create_prediction_map():
     fg_markers.add_to(m)
     fg_heatmap.add_to(m)
 
-    add_idw_overlay(fg_idw_peak, points_peak, values_peak, "idw_peak", "YlOrRd", "IDW Peak Rain (mm)")
-    add_idw_overlay(fg_idw_24h,  points_24h,  values_24h,  "idw_24h",  "YlGnBu", "IDW Expected 24h (mm)")
+    # ────────────────────────────────────────────────
+    # Simple & accurate sync: Use real min/max for both map and legend
+    # ────────────────────────────────────────────────
+    if values_peak:
+        min_p = min(values_peak)
+        max_p = max(values_peak)
+        vmin_p = round(min_p * 0.9, 1) if min_p > 0 else 0.0
+        vmax_p = round(max_p * 1.15, 1)
+        
+        add_idw_overlay(fg_idw_peak, points_peak, values_peak, "idw_peak", "YlOrRd", "IDW Peak Rain (mm)", 
+                        vmin=vmin_p, vmax=vmax_p)
+        create_colorbar_png("colorbar_peak.png", "YlOrRd", vmin_p, vmax_p, "Peak Rainfall (mm)")
+
+    if values_24h:
+        min_24 = min(values_24h)
+        max_24 = max(values_24h)
+        vmin_24 = round(min_24 * 0.9, 1) if min_24 > 0 else 0.0
+        vmax_24 = round(max_24 * 1.10, 1)
+        
+        add_idw_overlay(fg_idw_24h, points_24h, values_24h, "idw_24h", "YlGnBu", "IDW Expected 24h (mm)", 
+                        vmin=vmin_24, vmax=vmax_24)
+        create_colorbar_png("colorbar_24h.png", "YlGnBu", vmin_24, vmax_24, "Expected 24h Rainfall (mm)")
 
     fg_idw_peak.add_to(m)
     fg_idw_24h.add_to(m)
-
-    # ────────────────────────────────────────────────
-    # Improved dynamic colorbar for Expected 24h
-    # ────────────────────────────────────────────────
-    if values_peak:
-        vmin = max(0.0, round(min(values_peak) - 0.5, 1))
-        vmax = round(max(values_peak) + 1.0, 1)
-        create_colorbar_png("colorbar_peak.png", "YlOrRd", vmin, vmax, "Peak Rainfall (mm)")
-
-    if values_24h:
-        max_val = max(values_24h)
-        if max_val < 2.0:
-            vmin = 0.0
-            vmax = 2.0
-        elif max_val < 5.0:
-            vmin = 0.0
-            vmax = round(max_val * 1.4, 1)   # nice readable range for low rain
-        else:
-            vmin = max(0.0, round(min(values_24h) - 0.5, 1))
-            vmax = round(max_val + 0.8, 1)
-        create_colorbar_png("colorbar_24h.png", "YlGnBu", vmin, vmax, "Expected 24h Rainfall (mm)")
 
     legend_html_pred = '''
     {% raw %}
@@ -492,7 +493,7 @@ def create_prediction_map():
 
     <div id="legend-pred">
         <p>Forecast Rainfall</p>
-        <strong>Peak at max prob.</strong><br>
+        <strong>Peak Rainfall</strong><br>
         <img src="[PEAK_BASE64]"><br>
         <strong>Expected 24h</strong><br>
         <img src="[24H_BASE64]">
