@@ -325,7 +325,7 @@ def create_prediction_map():
                 background: rgba(255,255,255,0.92); padding: 8px 18px; border-radius: 6px;
                 box-shadow: 0 3px 10px rgba(0,0,0,0.25); font-size: 19px; font-weight: bold;
                 z-index: 1000; white-space: nowrap; border: 1px solid #ccc;">
-        Rainfall Map
+        Rainfall Map – Manado & Surroundings
     </div>
     '''
 
