@@ -37,10 +37,10 @@ TIMEZONE_OFFSET = timedelta(hours=8)       # WITA / Asia/Makassar
 TIMEZONE_LABEL = "UTC+8"
 
 # ---------- Heavy rainfall thresholds (mm) ----------
-THRESHOLD_PEAK_MODERATE = 2.0   # mm in any 3-hour period → Moderate
+THRESHOLD_PEAK_MODERATE = 1.0   # mm in any 3-hour period → Moderate
 THRESHOLD_PEAK_HEAVY   = 20.0   # mm in any 3-hour period → Heavy
 THRESHOLD_PEAK_EXTREME = 30.0   # mm in any 3-hour period → Very Heavy / Extreme
-THRESHOLD_24H_MODERATE = 5.0   # expected 24h rainfall → Moderate
+THRESHOLD_24H_MODERATE = 1.5   # expected 24h rainfall → Moderate
 THRESHOLD_24H_HEAVY    = 30.0   # expected 24h rainfall → Heavy
 THRESHOLD_24H_EXTREME  = 50.0  # expected 24h rainfall → Very Heavy
 
