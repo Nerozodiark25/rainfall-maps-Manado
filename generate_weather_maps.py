@@ -2,7 +2,7 @@
 Improved Weather Map Generation script
 - Heavy rainfall warnings (peak 3h + expected 24h)
 - Safe rivers layer (no crash if GeoJSON missing)
-- Writes warnings_a.json for the dashboard sidebar
+- Writes warnings.json for the dashboard and rainfall_history.json for analysis
 - Better local / GitHub compatibility
 """
 
@@ -21,13 +21,13 @@ import matplotlib.pyplot as plt
 from folium.plugins import HeatMap
 
 logging.basicConfig(
-    filename="rainfall_maps_a.log",
+    filename="rainfall_maps.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 # ================== CONFIG ==================
-API_KEY = os.getenv("OPENWEATHER_API_KEY")
+API_KEY = "dbb705635a50974c504754350f9ed985"
 if not API_KEY:
     raise ValueError("Set OPENWEATHER_API_KEY before running this script")
 
@@ -104,6 +104,58 @@ def save_cache(cache_file, data):
     except Exception:
         if os.path.exists(tmp.name):
             os.remove(tmp.name)
+
+
+def save_weather_history(history_file, snapshot, last_update):
+    if os.path.exists(history_file):
+        with open(history_file, encoding="utf-8") as f:
+            history = json.load(f)
+        if not isinstance(history, dict) or not isinstance(history.get("runs"), list):
+            raise ValueError(f"Invalid weather history format in {history_file}")
+    else:
+        history = {
+            "area": "Manado",
+            "timezone": TIMEZONE_LABEL,
+            "runs": [],
+        }
+
+    latest_run = history["runs"][-1] if history["runs"] else None
+    snapshot_content = {
+        key: value for key, value in snapshot.items()
+        if key not in ("generated", "last_update")
+    }
+    latest_content = (
+        {
+            key: value for key, value in latest_run.items()
+            if key not in ("generated", "last_update")
+        }
+        if isinstance(latest_run, dict)
+        else None
+    )
+    changed = (
+        latest_content is None
+        or json.dumps(snapshot_content, sort_keys=True) != json.dumps(latest_content, sort_keys=True)
+    )
+
+    history["last_update"] = last_update
+    if changed:
+        history["runs"].append(snapshot)
+
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            delete=False,
+            dir=os.path.dirname(history_file) or ".",
+        ) as tmp:
+            tmp_path = tmp.name
+            json.dump(history, tmp, indent=2, ensure_ascii=False)
+        os.replace(tmp_path, history_file)
+    finally:
+        if tmp_path and os.path.exists(tmp_path):
+            os.remove(tmp_path)
+    return changed
 
 
 def get_3h_forecast(lat, lon, cache_file="forecast_3h_cache.json"):
@@ -459,7 +511,8 @@ def create_prediction_map():
     m = folium.Map(location=MAP_CENTER, zoom_start=ZOOM_START, tiles=None, control_scale=True)
     add_basemaps(m)
 
-    generated_time = (datetime.now(timezone.utc) + TIMEZONE_OFFSET).strftime("%d %B %Y %H:%M")
+    generated_utc = datetime.now(timezone.utc)
+    generated_time = (generated_utc + TIMEZONE_OFFSET).strftime("%d %B %Y %H:%M")
     # One header, top-center. Timestamp lives inside it so the top-right
     # stays free for the (collapsed) layer control.
     title_html = f'''
@@ -488,10 +541,13 @@ def create_prediction_map():
     # Collect warnings for the banner + JSON
     warnings_list = []          # human readable
     warning_stations = []       # structured for JSON
+    station_history = []
+    unavailable_stations = []
 
     for lat, lon in LOCATIONS:
         fc = get_3h_forecast(lat, lon)
         if not fc:
+            unavailable_stations.append({"lat": lat, "lon": lon})
             folium.CircleMarker(
                 [lat, lon], radius=5, color="gray", fill=True, fill_opacity=0.6,
                 popup="No data"
@@ -505,6 +561,18 @@ def create_prediction_map():
         peak_lvl = classify_peak(rain_at_max_pop)
         h24_lvl  = classify_24h(expected_24h)
         overall  = warning_level(peak_lvl, h24_lvl)
+
+        station_history.append({
+            "lat": lat,
+            "lon": lon,
+            "max_pop": max_pop,
+            "peak_mm": round(rain_at_max_pop, 1),
+            "expected_24h_mm": round(expected_24h, 1),
+            "level": overall,
+            "peak_level": peak_lvl,
+            "h24_level": h24_lvl,
+            "forecast": fc,
+        })
 
         # ---------- Popup content ----------
         popup_lines = [
@@ -688,11 +756,34 @@ def create_prediction_map():
     m.save("rainfall_prediction_map.html")
     print("✅ Saved: rainfall_prediction_map.html")
 
+    last_update = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    history_snapshot = {
+        "generated": generated_time,
+        "last_update": last_update,
+        "timezone": TIMEZONE_LABEL,
+        "thresholds": {
+            "peak_heavy_mm": THRESHOLD_PEAK_HEAVY,
+            "peak_extreme_mm": THRESHOLD_PEAK_EXTREME,
+            "peak_moderate_mm": THRESHOLD_PEAK_MODERATE,
+            "h24_heavy_mm": THRESHOLD_24H_HEAVY,
+            "h24_extreme_mm": THRESHOLD_24H_EXTREME,
+            "h24_moderate_mm": THRESHOLD_24H_MODERATE,
+        },
+        "stations": station_history,
+        "unavailable_stations": unavailable_stations,
+    }
+    history_changed = save_weather_history("rainfall_history.json", history_snapshot, last_update)
+    if history_changed:
+        print("✅ New forecast snapshot saved: rainfall_history.json")
+    else:
+        print("ℹ️ Forecast unchanged; history not duplicated. Updated last_update.")
+
     # ---------- Write warnings JSON for the dashboard ----------
     warnings_payload = {
         "map": "a",
         "area": "Limboto - Bolango - Bone Basin",
         "generated": generated_time,
+        "last_update": last_update,
         "timezone": TIMEZONE_LABEL,
         "thresholds": {
             "peak_heavy_mm": THRESHOLD_PEAK_HEAVY,
@@ -711,7 +802,7 @@ def create_prediction_map():
     }
     with open("warnings.json", "w", encoding="utf-8") as f:
         json.dump(warnings_payload, f, indent=2, ensure_ascii=False)
-    print("✅ Saved: warnings_a.json (for dashboard sidebar)")
+    print("✅ Saved: warnings.json (for dashboard sidebar)")
 
 
 # ────────────────────────────────────────────────
@@ -828,4 +919,4 @@ if __name__ == "__main__":
     # create_realtime_map()   # enable when you want the real-time map
     print("Done!")
     print("  • rainfall_prediction_map.html")
-    print("  • warnings.json   ← used by the dashboard sidebar")
+
