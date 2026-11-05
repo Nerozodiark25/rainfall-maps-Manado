@@ -362,8 +362,8 @@ def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filenam
         min_lat, max_lat = min(lats) - 0.015, max(lats) + 0.015
         min_lon, max_lon = min(lons) - 0.015, max(lons) + 0.015
 
-        grid_lon = np.linspace(min_lon, max_lon, 700)
-        grid_lat = np.linspace(min_lat, max_lat, 700)
+        grid_lon = np.linspace(min_lon, max_lon, 250)
+        grid_lat = np.linspace(min_lat, max_lat, 250)
         grid_x, grid_y = np.meshgrid(grid_lon, grid_lat)
 
         def idw_interpolate(x, y):
@@ -382,7 +382,7 @@ def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filenam
         cmap.set_bad(alpha=0)
         ax.imshow(grid_z, extent=[min_lon, max_lon, min_lat, max_lat],
                   cmap=cmap, vmin=vmin, vmax=vmax, alpha=0.75, origin="lower")
-        plt.savefig(base_png, dpi=140, transparent=True, bbox_inches="tight", pad_inches=0)
+        plt.savefig(base_png, dpi=80, transparent=True, bbox_inches="tight", pad_inches=0)
         plt.close(fig)
 
         contour_png = f"{filename_base}_contours.png"
@@ -409,7 +409,7 @@ def add_idw_overlay(fg: folium.FeatureGroup, points: list, values: list, filenam
                     cs = ax2.contour(grid_x, grid_y, grid_z, levels=levels, colors="black", linewidths=1.1)
                     ax2.clabel(cs, inline=True, fontsize=9, fmt="%.1f mm")
 
-                    plt.savefig(contour_png, dpi=140, transparent=True, bbox_inches="tight", pad_inches=0)
+                    plt.savefig(contour_png, dpi=80, transparent=True, bbox_inches="tight", pad_inches=0)
                     plt.close(fig2)
                     contours_created = True
                     print(f"   → Contours created (max {data_max:.2f} mm, {len(levels)} levels)")
@@ -508,7 +508,7 @@ def add_basemaps(m):
 # Prediction Map
 # ────────────────────────────────────────────────
 def create_prediction_map():
-    m = folium.Map(location=MAP_CENTER, zoom_start=ZOOM_START, tiles=None, control_scale=True)
+    m = folium.Map(location=MAP_CENTER, zoom_start=ZOOM_START, tiles=None, control_scale=True, zoom_snap=0.25, zoom_delta=0.5)
     add_basemaps(m)
 
     generated_utc = datetime.now(timezone.utc)
