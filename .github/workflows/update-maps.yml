@@ -4,7 +4,8 @@ permissions:
 
 on:
   schedule:
-    - cron: '37 23,17,11,5 * * *'      # current schedule (every 6 hours) could be changed to 12 hours if server is bad
+    - cron: '37 05,08,18 * * *'      # current schedule (every 6 hours) could be changed to 12 hours if server is bad
+      timezone: 'Asia/Singapore'
   workflow_dispatch:
 
 jobs:
